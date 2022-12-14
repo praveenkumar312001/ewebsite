@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecommerce store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,100&display=swap" rel="stylesheet">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" width="125px">
+                </div>
+                <nav>
+                    <ul id="menuitems">
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="products.html">products</a></li>
+                        <li><a href="">about</a></li>
+                        <li><a href="">contact</a></li>
+                        <li><a href="account.html">account</a></li>
+                    </ul>
+                </nav>
+                <img src="images/cart.png" width="30px" height="30px">
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>give your workout <br>a new style</h1>
+                    <p>success isnt always about greatness. 
+                        its about consistency. 
+                        consistnet hardwork gains success. greatness 
+                        will come.
+                    </p>
+                    <a href="" class="btn">explore now &#10132;</a>
+                </div>
+                <div class="col-2">
+                    <img src="images/image1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!--featured categories-->
+    <main class="main-content" ng-app="prwpst" ng-controller="pctrl">
+		
+		
+        <div class="fullwidth-block inner-content">
+            <div class="container"  ng-init="cards=[
+            {
+                src :'images/product-1.jpg', 
+                name: 'red printed t-shirt',
+                price : 500
+            },
+            {
+                src :'images/product-2.jpg', 
+                name : 'sports shoes',
+                price : 2000
+                
+            },
+            {
+                src :'images/product-3.jpg', 
+                name : 'ash colored joggers',
+                price : 800
+            },
+            {
+                src : 'images/product-4.jpg', 
+                name : 'puma t-shirt',
+                price : 1750
+            } 
+                     
+            ]"></div>
+            
+            <div class = "container" ng-init = "cards1 = [
+            {
+                src :'images/product-5.jpg', 
+                name : 'ash colored shoes',
+                price : 2500
+            },
+            {
+                src :'images/product-6.jpg', 
+                name : 'puma black t-shirt',
+                price : 1771
+            },
+            {
+                src :'images/product-7.jpg', 
+                name : 'ankle socks',
+                price : 300
+            },
+            {
+                src :'images/product-8.jpg', 
+                name : 'fossil watch',
+                price : 6700
+            }]"></div>
+            <div class = "container" ng-init = "cards2 = [
+            {
+                src : 'images/product-9.jpg', 
+                name : 'roadster analog watch',
+                price : 5000
+            },
+            {
+                src :'images/product-10.jpg', 
+                name : 'red shoe',
+                price : 1200
+            },
+            {
+                src :'images/product-11.jpg', 
+                name : 'ash colored shoes',
+                price : 1500
+            },
+            {
+                src : 'images/product-12.jpg', 
+                name : 'black joggers',
+                price : 900
+            }
+            ]"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="categories">
+                <div class="small-container">
+                    <div class="row" >
+
+                        <div class="col-3" ng-repeat="card in cardsdb">
+                            <img src={{card.location}} alt="">
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+        <h2 class="title">latest products</h2>
+        <div class="row">
+                <div class="col-4" ng-repeat="card in cards">
+                    <img src=  {{card.src}} alt="">
+                <h4>{{card.name}}</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>&#8377; {{card.price}}</p>
+                </div>
+        </div>
+        <h2 class="title">featured products</h2>
+        <div class="row">
+            <div class="col-4" ng-repeat="card in cards1">
+                <img src=  {{card.src}} alt="">
+            <h4>{{card.name}}</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>&#8377; {{card.price}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4" ng-repeat="card in cards2">
+                <img src=  {{card.src}} alt="">
+            <h4>{{card.name}}</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>&#8377; {{card.price}}</p>
+            </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div class="container">
+            
+            
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="content">
+                    
+                        
+
+                        
+                         
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+                        
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <!-- .testimonial-section -->
+    </main> <!-- .main-content -->
+
+
+    
+
+
+    
+
+
+    <!--featured products-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    <!--offer-->
+
+
+
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/exclusive.png" class="offer-img">
+                </div>
+                <div class="col-2">
+                    <p>exclusively availale on redstore</p>
+                    <h1>smart band 4</h1>
+                    <small>features AMOLED color display panel 
+                        with adjustable brightness.
+                    </small>
+                    <a href="" class="btn">buy now &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--testimonial-->
+
+
+
+
+
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+
+                <div class="col-3" ng-repeat="card in userprofilecards">
+                    <i class="fa fa-quote-left"></i>
+                    <p>lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <img src={{card.location}} alt="">
+                    <h3>{{card.name}}</h3>
+                </div>   
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--brands-->
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="
+                    images/logo-godrej.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="
+                    images/logo-oppo.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="
+                    images/logo-coca-cola.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="images/logo-paypal.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="images/logo-philips.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--footer-->
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>download our app</h3>
+                    <p>download our app for android and ios mobile phones.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" >
+                        <img src="images/app-store.png" >
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>our purpose is to make benefits of sports accessible to many</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>useful links</h3>
+                    <ul>
+                        <li>coupons</li>
+                        <li>blog post</li>
+                        <li>return policy</li>
+                        <li>join affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>follow us</h3>
+                    <ul>
+                        <li>facebook</li>
+                        <li>twitter</li>
+                        <li>instagram</li>
+                        <li>youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">copyright 2020 - praveen </p>
+        </div>
+    </div>
+
+    <!--javascript-->
+    <script>
+        var menuitems = document.getElementById("menuitems");
+        menuitems.style.maxHeight = "0px";
+
+        function menutoggle(){
+            if(menuitems.style.maxHeight == "0px"){
+                menuitems.style.maxHeight = "200px";
+            }
+            else{
+                menuitems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+<script type="text/javascript">
+    var app=angular.module('prwpst', []);
+  
+    app.controller('pctrl', function($scope, $http) {
+        $http({
+              method: 'GET',
+              url: "http://localhost:3000/loaduserprofile"
+              }).then(function success(response) {
+                  $scope.userprofilecards=response.data;
+                  }, function error(response) {
+                  }
+              );
+      $http({
+              method: 'GET',
+              url: "http://localhost:3000/load3img"
+              }).then(function success(response) {
+                  $scope.cardsdb=response.data;
+                  }, function error(response) {
+                  }
+              );
+              
+      });
+</script>
+
+
+
+
+</body>
+</html>
